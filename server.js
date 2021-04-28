@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
  
 app.get("/", function(req, res){
-    res.send("Welcome to jeevan site Site");
+    res.send("Welcome to jeevan  Site");
 })
  
 // Heroku will automatically set an environment variable called PORT
