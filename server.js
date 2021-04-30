@@ -6,7 +6,7 @@ app.get("/", function(req, res){
     res.send("Welcome to jeevan  Site");
 })
 app.get("/resume",function(req,res){
-    let filepath = "bharath.png";
+    let filepath = __dirname + "/bharath.png";
 
     res.sendFile(filepath);
 })
