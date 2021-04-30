@@ -6,7 +6,7 @@ app.get("/", function(req, res){
     res.send("Welcome to jeevan  Site");
 })
 app.get("/resume",function(req,res){
-    let filepath = __dirname +"/resume.html";
+    let filepath = __dirname +"/frontend/html/resume.html";
 
     res.sendFile(filepath);
 })
