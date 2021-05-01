@@ -1,5 +1,60 @@
-h1{
-    color:brown;
-    font-size: large;
-    background-color: cyan;
+#hi{
+    text-decoration-color: white;
+    text-align: center;
+    font-size: 30px;
+    background-color:aliceblue;
+    border: 50px solid beige;
+    padding:10px;
+    
+    
+}
+img{
+  border: 1px solid rgb(184, 86, 86);
+  padding: 5px;
+ 
+  border-radius: 50%;
+    
+}
+
+#marks{
+    text-align-last: left;
+    text-decoration: red;
+    padding: 10px;
+    border: 20px,solid black;
+    border-radius: 20px;
+    background-color:grey
+    
+}
+
+#skills{
+    text-align: left;
+    padding: 10px;
+    border: 10px,solid black;
+    border-radius: 20px;
+    background-color:rgb(187, 126, 135)
+
+    
+}
+#projects{
+   
+    text-align: left;
+    padding: 10px;
+    border: 10px,solid black;
+    border-radius: 20px;
+    background-color:rgb(136, 156, 219)
+}
+#objective{
+    text-align: left;
+    padding: 10px;
+    border: 20px,solid black;
+    border-radius: 20px;
+    background-color:bisque;
+}
+#score{
+    text-align: left;
+    padding: 10px;
+    border: 20px,solid black;
+    border-radius: 20px;
+    background-color:rgb(134, 190, 129);
+
 }
