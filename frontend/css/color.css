@@ -1,0 +1,17 @@
+#rgb{
+    background-color:rgb(189, 100, 100);
+    text-align: center;
+    border:1px, solid black;
+    padding: 15px;
+   
+    margin: 3px;
+}
+li{
+   
+    list-style: none;
+    float: left;
+}
+
+body{
+    text-align: center;
+}

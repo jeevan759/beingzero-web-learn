@@ -11,6 +11,11 @@ app.get("/resume",function(req,res){
 
     res.sendFile(filepath);
 })
+app.get("/color", function(req,res){
+     let filepathcolor = __dirname +"/frontend/html/color.html";
+     res.sendFile(filepathcolor);
+
+})
 app.get("/google",function(req,res){
     let filepath1 = __dirname +"/frontend/html/google.html"
     res.sendFile(filepath1)
