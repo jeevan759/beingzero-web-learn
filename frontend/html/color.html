@@ -13,27 +13,22 @@
         <p>rgb </p>
     </div> 
     <ul>
-        <li id="red"> <form oninput="x.value=parseInt(a.value)">
+        <li id="red"> 
             <label for="">red</label>
-            <input type="range" id="a" value="0" max="255">
-            <br>
-            <output name="x" for="a "></output>
-          </form></li>
+            <input oninput="color()" type="range" id="a" value="0" max="255">
+            </li>
           <li>
-            <form oninput="x.value=parseInt(a.value)">
+            
                 <label>green</label>
-                <input type="range" id="b" value="0" max="255">
-                <br>
-                <output name="x" for="a "></output>
-            </form>
+                <input oninput="color()" type="range" id="b" value="0" max="255">
+               
           </li>
           <li>
-            <form oninput="x.value=parseInt(a.value)">
+            
                 <label>blue</label>
-                <input type="range" id="c" value="250" max="255">
+                <input oninput="color()" type="range" id="c" value="250" max="255">
                 <br>
-                <output name="x" for="a "></output>
-              </form>
+               
           </li>
     </ul>
    
