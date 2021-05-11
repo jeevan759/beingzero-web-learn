@@ -1,5 +1,6 @@
 function submit(){
   let x=document.getElementById("email").value;
+  console.log("hi");
   console.log("submitted");
-  document.getElementById("button").innerHTML= "<a href="/html/login.html" >submit</a>";
+  document.getElementById("login").innerHTML="submitted";
 }

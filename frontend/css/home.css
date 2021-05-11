@@ -1,0 +1,23 @@
+#list{
+    margin-left: 300px;
+    margin-top: 200px;
+}
+li{
+    float:left;
+    list-style-type: none
+    ;
+}
+h1{
+    text-align: center;
+}
+li a{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+}
+li a img{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: beige;
+    border-radius: 10px;
+}

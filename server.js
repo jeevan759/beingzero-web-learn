@@ -4,7 +4,8 @@ const app = express();
 app.use(express.static(__dirname + "/frontend"));
  
 app.get("/", function(req, res){
-    res.send("Welcome to jeevan  Site");
+    let filepathh=__dirname +"/frontend/html/home.html"
+    res.sendFile(filepathh);
 })
 app.get("/resume",function(req,res){
     let filepath = __dirname +"/frontend/html/resume.html";
@@ -15,6 +16,10 @@ app.get("/color", function(req,res){
      let filepathcolor = __dirname +"/frontend/html/color.html";
      res.sendFile(filepathcolor);
 
+})
+app.get("/api", function(req,res){
+    let filepathapi = __dirname +"/frontend/html/apicall.html";
+    res.sendFile(filepathapi);
 })
 app.get("/google",function(req,res){
     let filepath1 = __dirname +"/frontend/html/google.html"
