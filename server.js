@@ -20,6 +20,11 @@ app.get("/color", function(req,res){
 app.get("/api", function(req,res){
     let filepathapi = __dirname +"/frontend/html/apicall.html";
     res.sendFile(filepathapi);
+
+})
+app.get("/todo", function(req,res){
+    let filepathtodo = __dirname +"/frontend/html/todo.html";
+    res.sendFile(filepathtodo);
 })
 app.get("/google",function(req,res){
     let filepath1 = __dirname +"/frontend/html/google.html"

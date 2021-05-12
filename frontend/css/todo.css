@@ -1,0 +1,13 @@
+#main{
+    text-align: center;
+}
+li{
+    display: inline;
+}
+ul{
+    text-align: center;
+    list-style-type: none;
+}
+body{
+    color: red;
+}
