@@ -9,6 +9,7 @@ function load(){
     const data = await response.json();
     console.log(data);
     for (item of data){
+      let par= document.createElement('div');
       par.textContent=`todo: ${item.todo}`;
       document.body.append(par);
     }
