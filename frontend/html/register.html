@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
     <div >
-    <form>
+    <form  > 
         <label for="firstname">first name</label>
         <input type="text" id="firstname" name="firstname" placeholder="jon" ><br>
 
@@ -23,13 +24,20 @@
         <input type="password" id ="newpassword" name ="newpassword" placeholder="*************"><br>
         <label for ="confirmpassword">confirmpassword</label>
         <input type="confirmpassword" id="confirmpassword" name ="confirmpassword" placeholder="**************"><br>
+        <!--<button id="button">submit</button>
+        <input type="submit" value="submit">-->
+         <!--
+         <p id="login">it is submitting</p>-->
          <button onclick="submit();" id="button">submit</button>
-         <p id="login">it is submitting</p>
 
     </form>
+    </div id="div1">
+    <div>
+
     </div>
-    <script src="/js/register.js">
-    console.log("hi");
-    )</script>
+      
+    <script src="/js/register.js"></script>
+    
+
 </body>
 </html>

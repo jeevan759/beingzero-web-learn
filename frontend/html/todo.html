@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/todo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
 
+<body>
+   
     <div id ="main">
-        <h1 style="text-size-adjust: 30px;">todos</h1>
-        <ul>
-            <li>
-                <label for=""></label>
-                <input type="text"  id="submit" placeholder="write what to remember">  
-                <button id="add" >add</button>
-            </li><br>
-            <li> <p id="p"></p></li>
+        <h1 style="text-size-adjust: 30px;">todos</h>
+        <form action="/api/todos"  onsubmit="posts()"    method="POST" target="_blank">
+                <label for="todo"></label>
+                <input type="text"  id="submit"  name="todo" placeholder="write what to remember">  
+                <!-- <input type="button"  onc value ='add'>
+                <p id="p"></p></li> -->
+        </form>
+                 
            
-        </ul>
-       
+      
     </div>
-  
+  <div >
+      <p id="div1">hassa</p>
+
+  </div>
 
     
-    <script src="/js/todo.js"></script>
+    <script src="/js/todo1.js"></script>
+    
 </body>
 </html>
