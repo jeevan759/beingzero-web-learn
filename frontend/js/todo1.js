@@ -50,7 +50,7 @@ function posts(){
     //  };
     // // console.log(JSON.stringify(arr1));
     // fetch("/api/todos",options);
-     let par= document.createElement('div');
+    let par= document.createElement('div');
     // const options1 = {
     //     method:'GET',
     arr1.pop();
@@ -65,6 +65,7 @@ function posts(){
      const data = await response.json();
      console.log(data);
      for (item of data){
+      let par= document.createElement('div');
        par.textContent=`todo: ${item.todo}`;
        document.body.append(par);
      }
