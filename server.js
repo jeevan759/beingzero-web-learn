@@ -117,7 +117,9 @@ app.post("/api/users",function(req,res){
         // console.log();
         });
     
-
+app.get("/todolocal",function(req,res){
+    res.sendFile(__dirname+ "/frontend/html/todolocal.html");
+})
 app.get("/", function(req, res){
     let filepathh=__dirname +"/frontend/html/home.html"
     res.sendFile(filepathh);
