@@ -3,6 +3,20 @@
 
 let arr1=[];
 
+function load(){
+  async function gets(){
+    let response = await fetch('/api/todos');
+    const data = await response.json();
+    console.log(data);
+    for (item of data){
+      par.textContent=`todo: ${item.todo}`;
+      document.body.append(par);
+    }
+  };
+  gets();
+    
+
+}
 
 function posts(){
   // $("div1").html("<p>hi</p>")
