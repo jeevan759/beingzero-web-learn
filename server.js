@@ -1,15 +1,41 @@
 const express = require('express');
- 
 const app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(express.static(__dirname + "/frontend"));
+const courseLib= require('./backend/lib/courselib');
+
+
+// edit
+var mongoose= require('mongoose');
+const { getallcourses } = require('./backend/lib/courselib');
+const password=process.env.Mongo_Atlas_password;
+var url='mongodb+srv://jeevan:9912758898@cluster0.z04xj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+// var url='mongodb+srv://jeevan:<password>@cluster0.z04xj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+var dboptions={ useNewUrlParser: true , useUnifiedTopology: true };
+mongoose.connect(url,dboptions);
+var  db= mongoose.connection;
+db.on('connected',function(){
+    console.log('mongo connected')
+    courseLib.createcourse({coursename:'mean'},function(err,saveobj){
+        console.log(saveobj);
+    
+     })
+});
+
+
+// edit
+ app.get('/api/courses',courseLib.getallcourses);
+ app.post('/api/courses',courseLib.createcourse);
 
 let  users=[{
     username:"jeevan",branch:"ece",dob:"07",id:0
 },
 {username:"bharath",branch:"ece",id:1}
 ]
-app.use(express.static(__dirname + "/frontend"));
+app.get("/curd",function(req,res){
+    res.sendFile(__dirname+'/frontend/html/curd.html')
+})
 app.get("/api/users",function(req,res){
     res.json(users)
     console.log(req.body);
