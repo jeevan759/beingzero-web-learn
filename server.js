@@ -16,19 +16,22 @@ var dboptions={ useNewUrlParser: true , useUnifiedTopology: true };
 mongoose.connect(url,dboptions);
 var  db= mongoose.connection;
 db.on('connected',function(){
-    console.log('mongo connected')
-    courseLib.createcourse({coursename:'mean'},function(err,saveobj){
-        console.log(saveobj);
     
-     })
+console.log('mongo connected');
+   
 });
+// courseLib.createcourse({coursename:'mean'},function(err,saveobj){
+//     console.log(saveobj);
 
+//  })
 
 // edit
  app.get('/api/courses',courseLib.getallcourses);
  app.post('/api/courses',courseLib.createcourse);
+ app.delete('/api/courses/:id',courseLib.deletecourse);
+ app.put('/api/course/:id',courseLib.update);
 
-let  users=[{
+let  users=[{  
     username:"jeevan",branch:"ece",dob:"07",id:0
 },
 {username:"bharath",branch:"ece",id:1}
