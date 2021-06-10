@@ -1,0 +1,23 @@
+table, tr, td {
+    border-collapse: collapse;
+    border: solid 1px #999;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 40px;  */
+ }
+#table{
+    
+    /* width: 20%; */
+    /* border-spacing: 40px; */
+    
+}
+td {
+    min-width: 30px; 
+    color: #fff;
+    font-size: 10px;
+} 
+body{
+    text-align: center;
+    /* font-size: larger; */
+
+} 

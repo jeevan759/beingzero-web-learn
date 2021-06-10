@@ -1,0 +1,148 @@
+  
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Thambola</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/housie.css">
+  </head>
+  <body style="background-color: rgb(71, 76, 72);">
+      
+    <h2 id="head">Thambola Game</h2>
+
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div id="numgen">
+                <h1 id="numtext"></h1>
+            </div>
+        </div>
+        
+
+        <br>
+
+        <div class="container d-flex justify-content-center">
+            <button id="start" class="btn btn-outline-success btn-sm">show number</button>
+            &nbsp;&nbsp;
+            <button id="clear" class="btn btn-outline-danger btn-sm">reset</button>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <table id="board" class="table table-bordered table-sm"></table>
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="container" style="margin-left: 6.5%;margin-bottom: 5%;margin-top: 5px;">
+        <!-- <button onclick="window.location.href='/'" class="btn btn-success">Back to Home</button> -->
+    </div>
+
+
+    <script src="/js/housie.js"></script>
+    <script>
+        var numbers = [];
+        for(let i=1;i<=90;i++)numbers.push(i);
+
+        function display(){
+
+
+            var t = "<tr>", x = "";
+
+            for(let i=1;i<=90;i++){
+                if(i%10==0){
+                    x += "<td align='center' id='"+i+"' >"+i+"</td>";
+                    t+=x;
+                    t+="</tr>"
+                    if(i!=90)t +="<tr>";
+                    x = "";
+                }
+                else x += "<td align='center' id='"+i+"'  >"+i+"</td>";
+            }
+            
+            $("#board").css({
+                "background-color" : "white",
+            })
+            $('td').css('border','2px solid black')
+            $("#board").html(t);
+
+        }
+
+
+        function addNum(n){
+            var s = getColor();
+            console.log(n)
+            console.log(s)
+
+            $('#'+n).css({
+                "background-color" : s
+            });
+        }
+
+        function getColor(){
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (let i=0;i<6;i++){
+            color += letters[ Math.floor(Math.random() * 16) ];
+            }
+            return color;
+        }
+
+
+        $(document).ready(()=>{
+
+            display();
+
+
+            $("#start").click(()=>{
+
+
+                var time = setInterval(()=>{
+
+                    if(numbers.length==0){
+                        alert("Game is Completed !!");
+                        alert("Press Clear Board, to start a New Game")
+                        clearInterval(time);
+                    }
+            
+                    var n = numbers[ Math.floor(Math.random()*numbers.length) ]
+                    if(numbers.includes(n)){
+                        $('#numtext').html(n);
+                        var ind = numbers.indexOf(n);
+                        numbers.splice(ind,1);
+                        
+                        addNum(n.toString());
+            
+                    }
+
+                }, 2500);
+
+
+            })
+
+
+            $("#clear").click(()=>{
+
+                for(let i=1;i<=90;i++)numbers.push(i);
+                $('#numtext').html('');
+                $('td').css({
+                    "background-color" : "white"
+                });
+
+            })
+
+
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

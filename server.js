@@ -1,36 +1,20 @@
 const express = require('express');
+const mongoose=require('mongoose');
+const courseLib = require('./backend/lib/courselib');
+const config=require('./backend/config/config');
 const app = express();
-app.use(express.urlencoded({extended:true}));
+const dbConnectLib=require('./backend/lib/dbconnectionlib');
+const user= require('./backend/lib/userlib');
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+dbConnectLib.connect();
 app.use(express.static(__dirname + "/frontend"));
-const courseLib= require('./backend/lib/courselib');
-
-
-// edit
-var mongoose= require('mongoose');
-const { getallcourses } = require('./backend/lib/courselib');
-const password=process.env.Mongo_Atlas_password;
-var url='mongodb+srv://jeevan:9912758898@cluster0.z04xj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-// var url='mongodb+srv://jeevan:<password>@cluster0.z04xj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-var dboptions={ useNewUrlParser: true , useUnifiedTopology: true };
-mongoose.connect(url,dboptions);
-var  db= mongoose.connection;
-db.on('connected',function(){
-    
-console.log('mongo connected');
-   
-});
-// courseLib.createcourse({coursename:'mean'},function(err,saveobj){
-//     console.log(saveobj);
-
-//  })
-
-// edit
- app.get('/api/courses',courseLib.getallcourses);
+app.get('/api/courses',courseLib.getallcourses);
  app.post('/api/courses',courseLib.createcourse);
  app.delete('/api/courses/:id',courseLib.deletecourse);
  app.put('/api/course/:id',courseLib.update);
-
+ app.get('/api/user',user.userdetails);
+app.post('/api/user',user.createuser);
 let  users=[{  
     username:"jeevan",branch:"ece",dob:"07",id:0
 },
@@ -163,10 +147,16 @@ app.get("/color", function(req,res){
      res.sendFile(filepathcolor);
 
 })
+app.get("/welcome",function(req,res){
+    res.sendFile(__dirname+"/frontend/html/welcom.html");
+})
 app.get("/api", function(req,res){
     let filepathapi = __dirname +"/frontend/html/apicall.html";
     res.sendFile(filepathapi);
 
+})
+app.get("/thambola",function(req,res){
+    res.sendFile(__dirname+"/frontend/html/thambola.html")
 })
 app.get("/todo", function(req,res){
     let filepathtodo = __dirname +"/frontend/html/todo.html";
@@ -180,6 +170,9 @@ app.get("/apple",function(req,res){
     let filepath2 = __dirname +"/frontend/html/apple.html"
     res.sendFile(filepath2)
 })
+app.get("/house",function(req,res){
+    res.sendFile(__dirname +"/frontend/html/housie.html")
+})
 app.get("/register",function(req,res)
 {
     let filepathr=__dirname +"/frontend/html/register.html"
@@ -190,10 +183,7 @@ app.get("/login",function(req,res)
     let filepathl=__dirname +"/frontend/html/login.html"
     res.sendFile(filepathl)
 })
-// Heroku will automatically set an environment variable called PORT
-const PORT = process.env.PORT || 3000;
- //it is changed
-// Start the server
-app.listen(PORT, function(){
-    console.log("Server Starting running on http://localhost:"+PORT);
+
+app.listen(config.webPort, function () {
+    console.log("Server Starting running on http://localhost:" + config.webPort);
 })

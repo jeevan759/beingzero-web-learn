@@ -5,8 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+<header>
+    <ul>
+        <li><a href="/welcome">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Signup</a></li>
+        <li>guest</li>
+    </ul>
+    <br>
+
+
+</header>
 <body>
-    <p>you are loggid in</p>
+    <br>
+    <br>
+     
+    
+  <div id="jee">  <form >
+    <label for="username">userid/emailid</label>
+    <input type="email" name="username"><br>
+    <label for="password">password    </label>
+    <input type="password" name="password"><br>
+    <button onclick="login()">login</button>
+</form></div>
 </body>
+<script src="/js/login.js"></script>
+
+
 </html>

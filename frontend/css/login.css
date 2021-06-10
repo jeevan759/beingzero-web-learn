@@ -1,0 +1,27 @@
+ul{
+
+    color: aliceblue;
+    list-style-type: none;
+    float: right;
+    margin-top: 0%;
+
+}
+ul li{
+    border: 1px solid black;
+    padding: 10px
+}
+li{
+    float: left;
+    background-color:black;
+   }
+form{
+    margin-left: 200px;
+    margin-right: 250px;
+    text-align: center;
+    background-color:aqua;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+body{
+    background-color: aquamarine;
+}

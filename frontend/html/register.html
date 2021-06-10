@@ -6,11 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>  
+
     <div >
-    <form  > 
+        <ul>
+            <li><a href="/welcome">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Signup</a></li>
+            <li>guest</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+    <form action="/api/user ",onsubmit="/login"method="POST" >
+        
         <label for="firstname">first name</label>
         <input type="text" id="firstname" name="firstname" placeholder="jon" ><br>
 
@@ -23,7 +36,7 @@
         <label for ="newpassword">newpassword</label>
         <input type="password" id ="newpassword" name ="newpassword" placeholder="*************"><br>
         <label for ="confirmpassword">confirmpassword</label>
-        <input type="confirmpassword" id="confirmpassword" name ="confirmpassword" placeholder="**************"><br>
+        <input type="confirmpassword" id="confirmpassword" name="confirmpassword" placeholder="**************" ><br>
         <!--<button id="button">submit</button>
         <input type="submit" value="submit">-->
          <!--
@@ -31,6 +44,7 @@
          <button onclick="submit();" id="button">submit</button>
 
     </form>
+    
     </div id="div1">
     <div>
 
